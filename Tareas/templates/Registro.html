@@ -1,0 +1,39 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<main class="contenedor">
+<div class="row">
+<div class="col-md-4 offset-md-4 mt-5">
+<form action="/Registros/" method="POST" class="card card-body ">
+    <h1 class="text-center">Bienvenido al registro</h1>
+    {% csrf_token %}
+
+<div class="mb-3">
+    <label for="username" class="form-control">Nombre de Usuario : </label>
+    <input name="username" type="text" id="username" class="form-control" placeholder="Escribe tu nombre de usuario">
+</div>
+<div class="mb-3">
+    <label for="password1" class="form-control">Clave : </label>
+    <input name="password1" type="password" id="password1" class="form-control" placeholder="Escribe tu clave">
+</div>
+<div class="mb-3">
+    <label for="password2" class="form-control">Confirma tu clave: </label>
+    <input name="password2" type="password" id="password2" class="form-control" placeholder="Confirma tu clave">
+</div>
+
+
+
+
+
+
+ <!-- {{formulario}} -->
+
+<button class="btn btn-primary">Registrarse</button>
+{{error}}
+
+
+</form>
+</div>
+</div>
+</main>
+{% endblock %}

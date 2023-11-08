@@ -1,0 +1,32 @@
+{% extends 'Base.html'%}
+
+{% block content %}
+
+<main class="contenedor">
+    <div class="row">
+        <section class="col-md-4 offset-md-4 mt-5">
+            <form action="/Iniciar_Sesion/" method="POST" class="card card-body">
+                <h1 class="text-center">Iniciar Sesion</h1>
+                {% csrf_token %}
+            
+            <div class="mb-3">
+                <label for="username" class="form-control">Nombre de Usuario : </label>
+                <input name="username" type="text" id="username" class="form-control" placeholder="Escribe tu nombre de usuario">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-control">Clave : </label>
+                <input name="password" type="password" id="password" class="form-control" placeholder="Escribe tu clave">
+            </div>
+            
+            
+            
+             <!-- {{formulario}} -->
+            
+            <button class="btn btn-primary">Iniciar Sesion</button>
+            {{error}}
+            
+            </form>
+        </section>
+    </div>
+</main>
+{% endblock %}

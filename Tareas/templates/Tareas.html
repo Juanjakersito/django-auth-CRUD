@@ -1,0 +1,33 @@
+{% extends 'Base.html' %} {% block content %}
+<main class="contenedor">
+    <div class="row">
+      <div class="col-md-6 offset-md-4">
+        <h1 class="text-center display-4 py-5">Tareas Pendientes</h1>
+  
+        <ul>
+          {% for tarea in tareas %}
+  
+          <a class="list-group-item" href="{% url 'Detalles_de_Tarea' tarea.id %}">
+            <!-- Kesto es para que nos redireccione a la url denamica que habiamos establlecido-->
+              <header class="d-flex justify-content-between">
+                  {% if tarea.importante %}
+  
+              <h1 class="fw-bold text-success">{{tarea.titulo}}</h1>
+              {% else %} 
+              <h1 class="fw-bold text-success">{{tarea.titulo}}</h1>
+              {% endif %}
+              <p>{{tarea.usuario.username}}</p>
+              </header>
+  
+  
+              <p>{{tarea.descripcion}}</p>
+              <p>{{tarea.dia_completada|date:'M j Y:i'}}</p>
+            
+          </a>
+  
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}
